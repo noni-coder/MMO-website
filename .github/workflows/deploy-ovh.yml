@@ -1,0 +1,30 @@
+name: Deploy MMO to OVH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.OVH_HOST }}
+          username: ${{ secrets.OVH_USERNAME }}
+          password: ${{ secrets.OVH_PASSWORD }}
+          local-dir: ./
+          server-dir: ${{ secrets.OVH_REMOTE_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/README.md
+            **/php/config.php
+            **/*.log
+              #test
