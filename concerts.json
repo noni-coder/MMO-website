@@ -1,0 +1,39 @@
+{
+  "_aide": "Ce fichier pilote le bandeau défilant et la section Agenda du site. Dates au format AAAA-MM-JJ. Le statut Passé/Prochain est calculé automatiquement. C'est ce fichier que l'agent WhatsApp modifiera.",
+  "bandeau": {
+    "auto_prochain_concert": true,
+    "messages_fixes": [
+      "ONE PIECE - NARUTO - DEMON SLAYER - CARD CAPTOR SAKURA - THE PROMISED NEVERLAND - ATTACK ON TITAN - SAINT SEIYA"
+    ],
+    "messages_supplementaires": []
+  },
+  "concerts": [
+    {
+      "id": "nuit-conservatoires-2026-01-30",
+      "date": "2026-01-30",
+      "titre": "Nuit des Conservatoires",
+      "lieu": "Conservatoire de Bordeaux",
+      "note": "Concert animés - Ghibli, Your Name, L'Attaque des Titans",
+      "photo": "",
+      "popup": ""
+    },
+    {
+      "id": "concert-conservatoire-merignac-2026-02-28",
+      "date": "2026-02-28",
+      "titre": "Concert au Conservatoire",
+      "lieu": "Conservatoire de Mérignac",
+      "note": "Créations d'Eric Bappel avec les élèves du Conservatoire",
+      "photo": "",
+      "popup": "Créations d'Eric Bappel en partenariat avec le Conservatoire de Mérignac. Découvrez (ou redécouvrez ?!) ses oeuvres originales pour piano et pour orchestre dans des arrangements originaux, interprêtés par les élèves du Conservatoire de Mérignac et accompagnés par l'ensemble MMO."
+    },
+    {
+      "id": "festival-animasia-2026-06-13",
+      "date": "2026-06-13",
+      "titre": "Festival Animasia",
+      "lieu": "Saint-Médard-en-Jalles",
+      "note": "Concert au Festival Animasia",
+      "photo": "",
+      "popup": ""
+    }
+  ]
+}
