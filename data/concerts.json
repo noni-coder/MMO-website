@@ -34,6 +34,14 @@
       "note": "Concert au Festival Animasia",
       "photo": "",
       "popup": ""
+    },
+    {
+      "id": "test-concert-2026-12-19",
+      "date": "2026-12-19",
+      "titre": "Concert de Noël",
+      "lieu": "Bordeaux",
+      "note": "Test du système",
+      "photo": "",
+      "popup": ""
     }
-  ]
-}
+  
