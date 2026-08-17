@@ -27,6 +27,14 @@
     return d.getDate() + ' ' + MOIS_LONG[d.getMonth()] + ' ' + d.getFullYear();
   }
 
+  function heureJolie(h) {
+    if (!h) return '';
+    var m = /^(\d{1,2})[h:](\d{2})?$/.exec(String(h).trim());
+    if (!m) return String(h);
+    var mn = m[2] || '00';
+    return parseInt(m[1], 10) + 'h' + mn;
+  }
+
   function esc(t) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(t || ''));
@@ -52,6 +60,7 @@
 
     if (data.bandeau && data.bandeau.auto_prochain_concert && next) {
       messages.push('PROCHAIN CONCERT LE ' + dateLongueFr(next.d).toUpperCase() +
+        (next.c.heure ? ' \u00c0 ' + heureJolie(next.c.heure).toUpperCase() : '') +
         ' - ' + (next.c.lieu || '').toUpperCase() + ' *');
     }
     (data.bandeau && data.bandeau.messages_fixes || []).forEach(function (m) { messages.push(m); });
@@ -82,7 +91,7 @@
     html += '  </div>';
     html += '  <div class="adets">';
     html += '    <h3>' + esc(c.titre) + '</h3>';
-    html += '    <p class="loc">' + esc(c.lieu) + '</p>';
+    html += '    <p class="loc">' + esc(c.lieu) + (c.heure ? ' \u00b7 ' + esc(heureJolie(c.heure)) : '') + '</p>';
     if (c.note) html += '    <p class="note">' + esc(c.note) + '</p>';
     if (passe) {
       html += '<span class="abadge bpast">Passé</span>';
